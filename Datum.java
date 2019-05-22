@@ -18,6 +18,7 @@ public class Datum {
 		this.dag = dag;
 		this.maand = maand;
 		this.jaar = jaar;
+		bestaatDatum(dag,maand,jaar);
 	}
 	
 	public boolean bestaatDatum(int dag, int maand, int jaar)
@@ -42,7 +43,7 @@ public class Datum {
 				{
 					return true;
 				}
-			}
+			}	
 		}
 		return false;
 	}
@@ -54,7 +55,8 @@ public class Datum {
 	public String getDatumAsString()
 	{
 		// TODO
-		return "";
+		String output = Integer.toString(dag) + "/" + Integer.toString(maand)+ "/" + Integer.toString(jaar); 
+		return output;
 	}
 	
 	public int getDag()
@@ -71,4 +73,5 @@ public class Datum {
 	{
 		return jaar;
 	}
+	
 }
