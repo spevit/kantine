@@ -11,7 +11,13 @@ public class Dienblad {
      * Constructor
      */
     public Dienblad() {
-        // method body omitted
+    	//
+        artikelen = new ArrayList(Artikel);
+    }
+    
+    public Dienblad(Persoon persoon)
+    {
+    	Persoon = new Persoon;
     }
 
     /**
@@ -20,7 +26,8 @@ public class Dienblad {
      * @param artikel
      */
     public void voegToe(Artikel artikel) {
-        // method body omitted
+    	//
+        artikel.add(artikel);
     }
 
     /**
@@ -30,6 +37,7 @@ public class Dienblad {
      */
     public int getAantalArtikelen() {
         // method body omitted
+    	return artikelen.size();
     }
 
     /**
@@ -40,6 +48,7 @@ public class Dienblad {
      */
     public double getTotaalPrijs() {
         // method body omitted
+    	return totaalPrijs;
     }
 }
 
