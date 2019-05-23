@@ -66,7 +66,7 @@ public class Datum {
 	public String getDatumAsString()
 	{
 		// TODO
-		return "";
+		return dag + "-" + maand + "-" + jaar;
 	}
 	
 	public int getDag()
