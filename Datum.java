@@ -18,6 +18,7 @@ public class Datum {
 		this.dag = dag;
 		this.maand = maand;
 		this.jaar = jaar;
+		bestaatDatum(dag,maand,jaar);
 	}
 	
 	//Methode om te checken of de datum valide is
