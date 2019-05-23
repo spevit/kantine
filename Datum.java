@@ -18,35 +18,45 @@ public class Datum {
 		this.dag = dag;
 		this.maand = maand;
 		this.jaar = jaar;
-		bestaatDatum(dag,maand,jaar);
 	}
 	
+	//Methode om te checken of de datum valide is
 	public boolean bestaatDatum(int dag, int maand, int jaar)
 	{
+		//Checken of de datum binnen de limiet valt
 		if ((dag >= 1) && (maand > 0 && maand <= 12) && (jaar >= 1900 && jaar <= 2100))
 		{
-			if (maand == 2 && jaar%4 == 0 && dag <= 29) {
-				return true;
-			} 
-			if (maand == 2 && jaar%4 != 0 && dag <= 28) {
-					return true;
-			}
+			//De maanden met max 31 dagen apart nemen
 			if(maand == 1 || maand == 3 || maand == 5 || maand == 7 || maand == 8 || maand == 10 || maand == 12)
 			{
+				//Heeft de maand max 31 dagen? -> datum bestaat
 				if(dag <= 31)
 				{
+					System.out.println("true");
 					return true;
 				}
 			}
-			else {
-				if(dag <= 30)
-				{
+			//Alle maanden behalve februari, max 30 dagen? -> datum bestaat
+			else if (maand != 2) {
+				if (dag <= 30) {
+					System.out.println("true");
 					return true;
 				}
-			}	
+			}
+			//Februari over
+			else {
+				//Checken op schrikkeljaar, wanneer schrikkeljaar max 29 dagen, zo niet max 28 dagen
+				if ((maand == 2 && jaar%4 == 0 && dag < 30) || (maand == 2 && jaar%4 != 0 && dag < 29)) {
+					System.out.println("true");
+					return true;
+				} 
+			}
 		}
+		//Geen enkele conditie is juist?
+		System.out.println("false");
 		return false;
 	}
+	
 	
 	/**
 	 * Getter voor Sting weergave van datum
@@ -55,8 +65,7 @@ public class Datum {
 	public String getDatumAsString()
 	{
 		// TODO
-		String output = Integer.toString(dag) + "/" + Integer.toString(maand)+ "/" + Integer.toString(jaar); 
-		return output;
+		return "";
 	}
 	
 	public int getDag()
@@ -73,5 +82,4 @@ public class Datum {
 	{
 		return jaar;
 	}
-	
 }

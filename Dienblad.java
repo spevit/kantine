@@ -51,4 +51,3 @@ public class Dienblad {
     	return totaalPrijs;
     }
 }
-
